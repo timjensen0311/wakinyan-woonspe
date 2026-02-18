@@ -51,32 +51,34 @@ const App = {
     const imgW = size;
     const imgH = Math.round(size * 0.87); // aspect ratio of the original
     // Lightning bolt positions are relative to the thunderbird's wing tips
-    return `<div class="thunderbird-wrap ${className}" style="width:${imgW}px;height:${imgH + 40}px;position:relative">
+    return `<div class="thunderbird-wrap ${className}" style="width:${imgW}px;height:${imgH + 60}px;position:relative">
       <img src="images/thunderbird.png" alt="Wakinyan — Thunderbird" 
            class="thunderbird-img" 
            width="${imgW}" height="${imgH}"
            style="display:block;position:relative;z-index:1"/>
       <!-- Left wing lightning bolt -->
-      <svg class="wing-bolt wing-bolt-left" viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg"
-           style="position:absolute;left:${Math.round(imgW * 0.04)}px;top:${Math.round(imgH * 0.55)}px;width:${Math.round(imgW * 0.14)}px;z-index:2">
-        <path d="M22 0 L14 24 L22 20 L8 48 L18 40 L4 72 L16 44 L6 50 L18 26 L10 30 L22 4 Z" 
-              fill="url(#boltGradL)" opacity="0.9"/>
+      <svg class="wing-bolt wing-bolt-left" viewBox="0 0 40 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+           style="position:absolute;left:${Math.round(imgW * -0.02)}px;top:${Math.round(imgH * 0.45)}px;width:${Math.round(imgW * 0.28)}px;z-index:2">
+        <path d="M22 0 L16 18 L24 14 L12 38 L20 32 L6 60 L16 50 L2 82 L14 62 L8 70 L18 46 L10 52 L22 28 L14 34 L24 10 Z"
+              fill="url(#boltGradL)" opacity="1"/>
         <defs>
           <linearGradient id="boltGradL" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#dce8ff" stop-opacity="1"/>
-            <stop offset="100%" stop-color="#7ab0e8" stop-opacity="0.3"/>
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+            <stop offset="40%" stop-color="#dce8ff" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#7ab0e8" stop-opacity="0.5"/>
           </linearGradient>
         </defs>
       </svg>
       <!-- Right wing lightning bolt -->
-      <svg class="wing-bolt wing-bolt-right" viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg"
-           style="position:absolute;right:${Math.round(imgW * 0.04)}px;top:${Math.round(imgH * 0.55)}px;width:${Math.round(imgW * 0.14)}px;z-index:2">
-        <path d="M18 0 L26 24 L18 20 L32 48 L22 40 L36 72 L24 44 L34 50 L22 26 L30 30 L18 4 Z" 
-              fill="url(#boltGradR)" opacity="0.9"/>
+      <svg class="wing-bolt wing-bolt-right" viewBox="0 0 40 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+           style="position:absolute;right:${Math.round(imgW * -0.02)}px;top:${Math.round(imgH * 0.45)}px;width:${Math.round(imgW * 0.28)}px;z-index:2">
+        <path d="M18 0 L24 18 L16 14 L28 38 L20 32 L34 60 L24 50 L38 82 L26 62 L32 70 L22 46 L30 52 L18 28 L26 34 L16 10 Z"
+              fill="url(#boltGradR)" opacity="1"/>
         <defs>
           <linearGradient id="boltGradR" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#dce8ff" stop-opacity="1"/>
-            <stop offset="100%" stop-color="#7ab0e8" stop-opacity="0.3"/>
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+            <stop offset="40%" stop-color="#dce8ff" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#7ab0e8" stop-opacity="0.5"/>
           </linearGradient>
         </defs>
       </svg>

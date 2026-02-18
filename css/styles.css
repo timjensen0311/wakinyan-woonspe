@@ -323,33 +323,34 @@ body {
 .wing-bolt {
   opacity: 0;
   pointer-events: none;
-  filter: drop-shadow(0 0 6px rgba(200, 220, 255, 0.8))
-         drop-shadow(0 0 12px rgba(168, 200, 240, 0.4));
+  filter: drop-shadow(0 0 10px rgba(200, 220, 255, 1))
+         drop-shadow(0 0 25px rgba(168, 200, 240, 0.7))
+         drop-shadow(0 0 45px rgba(120, 170, 255, 0.4));
 }
 .wing-bolt-left {
-  animation: boltStrikeLeft 7s ease-in-out infinite;
+  animation: boltStrikeLeft 4s ease-in-out infinite;
 }
 .wing-bolt-right {
-  animation: boltStrikeRight 7s ease-in-out infinite;
-  animation-delay: 3.5s;
+  animation: boltStrikeRight 4s ease-in-out infinite;
+  animation-delay: 2s;
 }
 @keyframes boltStrikeLeft {
-  0%, 82%, 100% { opacity: 0; transform: scaleY(0.3); transform-origin: top; }
-  83% { opacity: 0.9; transform: scaleY(1); }
-  84% { opacity: 0.15; transform: scaleY(1); }
-  85% { opacity: 0.75; transform: scaleY(1); }
-  86% { opacity: 0.1; transform: scaleY(1); }
-  87% { opacity: 0.5; transform: scaleY(1); }
-  90% { opacity: 0; transform: scaleY(0.8); }
+  0%, 70%, 100% { opacity: 0; transform: scaleY(0.3); transform-origin: top; }
+  71% { opacity: 1; transform: scaleY(1); }
+  73% { opacity: 0.2; transform: scaleY(1); }
+  75% { opacity: 1; transform: scaleY(1); }
+  77% { opacity: 0.15; transform: scaleY(1); }
+  79% { opacity: 0.8; transform: scaleY(1); }
+  84% { opacity: 0; transform: scaleY(0.8); }
 }
 @keyframes boltStrikeRight {
-  0%, 82%, 100% { opacity: 0; transform: scaleY(0.3); transform-origin: top; }
-  83% { opacity: 0.85; transform: scaleY(1); }
-  84% { opacity: 0.1; transform: scaleY(1); }
-  85% { opacity: 0.7; transform: scaleY(1); }
-  86% { opacity: 0.05; transform: scaleY(1); }
-  87% { opacity: 0.45; transform: scaleY(1); }
-  90% { opacity: 0; transform: scaleY(0.8); }
+  0%, 70%, 100% { opacity: 0; transform: scaleY(0.3); transform-origin: top; }
+  71% { opacity: 1; transform: scaleY(1); }
+  73% { opacity: 0.15; transform: scaleY(1); }
+  75% { opacity: 0.95; transform: scaleY(1); }
+  77% { opacity: 0.1; transform: scaleY(1); }
+  79% { opacity: 0.7; transform: scaleY(1); }
+  84% { opacity: 0; transform: scaleY(0.8); }
 }
 
 /* Complete bird — warm gold tint */
