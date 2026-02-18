@@ -12,6 +12,44 @@ const App = {
     this.generateBgThunderbird();
     LakotaAudio.init();
     this.showHome();
+    this.startBoltAnimations();
+  },
+
+  // --- RANDOMIZED LIGHTNING BOLT ANIMATIONS ---
+  startBoltAnimations() {
+    const animateBolt = (selector) => {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      const strike = () => {
+        // Random flicker: 2-4 rapid flashes per strike
+        const flashes = 2 + Math.floor(Math.random() * 3);
+        let i = 0;
+        const flicker = () => {
+          if (i >= flashes) {
+            el.classList.remove('striking');
+            el.classList.add('fading');
+            setTimeout(() => el.classList.remove('fading'), 250);
+            // Wait a random interval before the next strike (2-8 seconds)
+            setTimeout(strike, 2000 + Math.random() * 6000);
+            return;
+          }
+          el.classList.add('striking');
+          el.classList.remove('fading');
+          // Flash on for 40-80ms
+          setTimeout(() => {
+            el.classList.remove('striking');
+            // Dark gap for 30-100ms
+            setTimeout(flicker, 30 + Math.random() * 70);
+          }, 40 + Math.random() * 40);
+          i++;
+        };
+        flicker();
+      };
+      // Stagger the initial start randomly
+      setTimeout(strike, Math.random() * 3000);
+    };
+    animateBolt('.wing-bolt-left');
+    animateBolt('.wing-bolt-right');
   },
 
   // --- BACKGROUND THUNDERBIRD WATERMARK ---

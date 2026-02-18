@@ -326,31 +326,18 @@ body {
   filter: drop-shadow(0 0 10px rgba(200, 220, 255, 1))
          drop-shadow(0 0 25px rgba(168, 200, 240, 0.7))
          drop-shadow(0 0 45px rgba(120, 170, 255, 0.4));
+  transform: scaleY(0.3);
+  transform-origin: top;
+  transition: opacity 0.05s, transform 0.05s;
 }
-.wing-bolt-left {
-  animation: boltStrikeLeft 4s ease-in-out infinite;
+.wing-bolt.striking {
+  opacity: 1;
+  transform: scaleY(1);
 }
-.wing-bolt-right {
-  animation: boltStrikeRight 4s ease-in-out infinite;
-  animation-delay: 2s;
-}
-@keyframes boltStrikeLeft {
-  0%, 70%, 100% { opacity: 0; transform: scaleY(0.3); transform-origin: top; }
-  71% { opacity: 1; transform: scaleY(1); }
-  73% { opacity: 0.2; transform: scaleY(1); }
-  75% { opacity: 1; transform: scaleY(1); }
-  77% { opacity: 0.15; transform: scaleY(1); }
-  79% { opacity: 0.8; transform: scaleY(1); }
-  84% { opacity: 0; transform: scaleY(0.8); }
-}
-@keyframes boltStrikeRight {
-  0%, 70%, 100% { opacity: 0; transform: scaleY(0.3); transform-origin: top; }
-  71% { opacity: 1; transform: scaleY(1); }
-  73% { opacity: 0.15; transform: scaleY(1); }
-  75% { opacity: 0.95; transform: scaleY(1); }
-  77% { opacity: 0.1; transform: scaleY(1); }
-  79% { opacity: 0.7; transform: scaleY(1); }
-  84% { opacity: 0; transform: scaleY(0.8); }
+.wing-bolt.fading {
+  opacity: 0;
+  transform: scaleY(0.8);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
 }
 
 /* Complete bird — warm gold tint */
