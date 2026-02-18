@@ -309,3 +309,82 @@ const LakotaAudio = {
 
 // Backward compat alias
 const Audio = LakotaAudio;
+
+// ==========================================================================
+// THUNDER — Ambient rolling thunder via Web Audio API
+// No audio files needed. Generates low rumble synced to lightning bolts.
+// ==========================================================================
+
+const Thunder = {
+  ctx: null,
+  enabled: true,
+  volume: 0.35,
+
+  getCtx() {
+    if (!this.ctx) {
+      this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    return this.ctx;
+  },
+
+  // Resume AudioContext on first user interaction (autoplay policy)
+  unlock() {
+    if (this.ctx && this.ctx.state === 'suspended') {
+      this.ctx.resume();
+    }
+  },
+
+  // Generate a rolling thunder rumble
+  // delay: seconds after lightning flash before thunder starts
+  // intensity: 0-1, how loud/long (randomized per strike)
+  rumble(delay, intensity) {
+    if (!this.enabled) return;
+    const ctx = this.getCtx();
+    if (ctx.state === 'suspended') return; // not yet unlocked
+
+    const startTime = ctx.currentTime + (delay || 0);
+    const duration = 1.5 + intensity * 3; // 1.5s to 4.5s
+    const vol = this.volume * (0.5 + intensity * 0.5);
+
+    // Create noise buffer for the rumble texture
+    const bufferSize = ctx.sampleRate * Math.ceil(duration + 1);
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = (Math.random() * 2 - 1);
+    }
+    const noise = ctx.createBufferSource();
+    noise.buffer = buffer;
+
+    // Low-pass filter: thunder is deep and bassy
+    const lpf = ctx.createBiquadFilter();
+    lpf.type = 'lowpass';
+    lpf.frequency.value = 80 + intensity * 60; // 80-140 Hz
+    lpf.Q.value = 0.7;
+
+    // Secondary rumble resonance
+    const lpf2 = ctx.createBiquadFilter();
+    lpf2.type = 'lowpass';
+    lpf2.frequency.value = 150 + intensity * 100;
+    lpf2.Q.value = 1.0;
+
+    // Envelope: swell up, roll, then decay
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0, startTime);
+    // Quick initial crack
+    gain.gain.linearRampToValueAtTime(vol * 0.7, startTime + 0.08);
+    gain.gain.linearRampToValueAtTime(vol * 0.3, startTime + 0.2);
+    // Rolling swell
+    gain.gain.linearRampToValueAtTime(vol, startTime + 0.4 + intensity * 0.5);
+    // Long decay across the plains
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+
+    noise.connect(lpf);
+    lpf.connect(lpf2);
+    lpf2.connect(gain);
+    gain.connect(ctx.destination);
+
+    noise.start(startTime);
+    noise.stop(startTime + duration + 0.1);
+  }
+};

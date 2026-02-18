@@ -17,6 +17,15 @@ const App = {
 
   // --- RANDOMIZED LIGHTNING BOLT ANIMATIONS ---
   startBoltAnimations() {
+    // Unlock thunder audio on first user interaction
+    const unlock = () => {
+      Thunder.unlock();
+      document.removeEventListener('click', unlock);
+      document.removeEventListener('touchstart', unlock);
+    };
+    document.addEventListener('click', unlock);
+    document.addEventListener('touchstart', unlock);
+
     const animateBolt = (selector) => {
       const el = document.querySelector(selector);
       if (!el) return;
@@ -24,6 +33,7 @@ const App = {
         // Random flicker: 2-4 rapid flashes per strike
         const flashes = 2 + Math.floor(Math.random() * 3);
         let i = 0;
+        let thunderTriggered = false;
         const flicker = () => {
           if (i >= flashes) {
             el.classList.remove('striking');
@@ -35,6 +45,13 @@ const App = {
           }
           el.classList.add('striking');
           el.classList.remove('fading');
+          // Trigger thunder on the first flash with a slight delay
+          if (!thunderTriggered) {
+            thunderTriggered = true;
+            const delay = 0.15 + Math.random() * 0.4; // 150-550ms after flash
+            const intensity = 0.3 + Math.random() * 0.7;
+            Thunder.rumble(delay, intensity);
+          }
           // Flash on for 40-80ms
           setTimeout(() => {
             el.classList.remove('striking');
