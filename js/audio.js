@@ -206,34 +206,44 @@ const LakotaAudio = {
   hasRealAudio: {},
 
   // --- MAIN SPEAK FUNCTION ---
+  // On mobile, speechSynthesis.speak() must run synchronously within the
+  // user gesture (tap/click). An async detour (like trying to load an audio
+  // file that doesn't exist) loses the gesture context and mobile browsers
+  // silently block the TTS call. So we only use real audio files that have
+  // already been confirmed to exist; otherwise go straight to TTS.
   speak(text, onStart, onEnd) {
     if (this.speaking) return;
 
     const key = text.toLowerCase().trim();
 
-    // Try real audio file first
+    // Use a confirmed real audio file if one exists
     const path = this.getAudioPath(key);
     if (this.hasRealAudio[path] === true) {
       this.playFile(path, onStart, onEnd);
       return;
     }
 
-    if (this.hasRealAudio[path] === undefined) {
+    // Go straight to TTS — keeps us in the user gesture context on mobile
+    this.speakTTS(key, onStart, onEnd);
+  },
+
+  // Probe for real audio files in the background (non-blocking).
+  // Call once at init so future speak() calls can use them if found.
+  probeAudioFiles() {
+    const keys = Object.keys(this.phoneticMap);
+    keys.forEach(key => {
+      const path = this.getAudioPath(key);
+      if (this.hasRealAudio[path] !== undefined) return;
       this.hasRealAudio[path] = false;
       const audio = new window.Audio(path);
       audio.addEventListener('canplaythrough', () => {
         this.hasRealAudio[path] = true;
-        this.playFile(path, onStart, onEnd);
       }, { once: true });
       audio.addEventListener('error', () => {
         this.hasRealAudio[path] = false;
-        this.speakTTS(key, onStart, onEnd);
       }, { once: true });
       audio.load();
-      return;
-    }
-
-    this.speakTTS(key, onStart, onEnd);
+    });
   },
 
   // --- TTS PRONUNCIATION ---
@@ -272,6 +282,15 @@ const LakotaAudio = {
     utter.onerror = () => { this.speaking = false; if (onEnd) onEnd(); };
 
     window.speechSynthesis.speak(utter);
+
+    // iOS Safari workaround: speechSynthesis can stall silently.
+    // If onend/onerror never fire, reset speaking after a timeout.
+    setTimeout(() => {
+      if (this.speaking) {
+        this.speaking = false;
+        if (onEnd) onEnd();
+      }
+    }, 5000);
   },
 
   // --- REAL AUDIO FILE PLAYBACK ---
@@ -304,6 +323,8 @@ const LakotaAudio = {
         window.speechSynthesis.getVoices();
       };
     }
+    // Background-probe for real audio files so they're ready if they exist
+    this.probeAudioFiles();
   },
 };
 
