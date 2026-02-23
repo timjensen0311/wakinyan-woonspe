@@ -340,6 +340,8 @@ const Thunder = {
   ctx: null,
   enabled: true,
   volume: 0.35,
+  _lastRumble: 0,
+  _minGap: 8000, // minimum ms between rumbles
 
   getCtx() {
     if (!this.ctx) {
@@ -360,6 +362,12 @@ const Thunder = {
   // intensity: 0-1, how loud/long (randomized per strike)
   rumble(delay, intensity) {
     if (!this.enabled) return;
+    const now = Date.now();
+    // Enforce minimum gap (8-15s randomized) between thunder rolls
+    if (now - this._lastRumble < this._minGap) return;
+    this._lastRumble = now;
+    this._minGap = 8000 + Math.random() * 7000;
+
     const ctx = this.getCtx();
     if (ctx.state === 'suspended') return; // not yet unlocked
 
