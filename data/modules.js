@@ -141,6 +141,9 @@ const MODULE_DATA = [
               { lakota: 'Aŋpétu wašté', english: 'Good day' },
             ]
           },
+          { type: 'listen-identify', prompt: 'Taŋyáŋ yahí', phonetic: 'tahn-YAHN yah-HEE', meaning: 'You arrived well / Welcome', options: ['Goodbye', 'Good day', 'You arrived well', 'How are you?'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Níš eníš?', phonetic: 'neesh ay-NEESH', meaning: 'And you? / What about you?', options: ['Who are you?', 'And you?', 'Where are you?', 'How are you?'], correct: 1 },
+          { type: 'multiple-choice', prompt: 'Someone greets you: "Háu! Tókheškhe yaúŋ he?" You respond "Taŋyáŋ waúŋ!" and want to ask them back. You add:', options: ['Tokša akhé', 'Aŋpétu wašté', 'Níš eníš?', 'Philámayaye'], correct: 2, explanation: '"Níš eníš?" — And you? A natural follow-up after answering how you are. It keeps the conversation going.' },
         ]
       },
       {
@@ -1132,6 +1135,9 @@ const MODULE_DATA = [
               { lakota: 'Lóčhiŋ waúŋ', english: 'I am hungry' },
             ]
           },
+          { type: 'listen-identify', prompt: 'Čhaŋté mašká', phonetic: 'chahn-TAY mah-SHKAH', meaning: 'My heart is happy', options: ['My heart is sad', 'My heart is strong', 'My heart is happy', 'I have a good heart'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Wašté šni', phonetic: 'wash-TAY shnee', meaning: 'Not good / Bad', options: ['Very good', 'Not good', 'Okay', 'Beautiful'], correct: 1 },
+          { type: 'multiple-choice', prompt: 'Someone asks how you are and you\'re feeling great. You say "Čhaŋté mašká!" This means:', options: ['I am tired', 'I am hungry', 'My heart is happy', 'I have a good heart'], correct: 2, explanation: '"Čhaŋté mašká" — My heart is happy. A beautiful, heartfelt way to say you\'re doing well. You\'ll use this a lot at Sundance.' },
         ]
       },
       {
@@ -1221,6 +1227,8 @@ const MODULE_DATA = [
               { lakota: 'Wahánpi', english: 'Soup' },
             ]
           },
+          { type: 'listen-identify', prompt: 'Ípuza', phonetic: 'EE-poo-zah', meaning: 'Thirsty', options: ['Hungry', 'Thirsty', 'Full', 'Tired'], correct: 1 },
+          { type: 'multiple-choice', prompt: 'It\'s a hot day at camp. Someone says "Ípuza!" What do they need?', options: ['Food', 'Rest', 'Water — they\'re thirsty', 'Shade'], correct: 2, explanation: '"Ípuza" — thirsty. On hot Sundance days, you\'ll hear this often. Bring water to those who need it.' },
         ]
       },
       {
@@ -1508,6 +1516,8 @@ const MODULE_DATA = [
           { type: 'multiple-choice', prompt: 'Someone hands you a knife and points at the meat. The word for knife is:', options: ['Čhéǧa', 'Ohéhaŋ', 'Míla', 'Ȟáŋ'], correct: 2, explanation: 'Míla — knife. Grab it and start cutting. You\'re part of the kitchen crew now.' },
           { type: 'multiple-choice', prompt: 'The big pot of soup simmering over the fire is called a:', options: ['Míla', 'Čhéǧa', 'Wóyute', 'Ȟáŋ'], correct: 1, explanation: 'Čhéǧa — kettle, pot. The čhéǧa is always on at camp.' },
           { type: 'match', prompt: 'Match the kitchen words:', pairs: [ { lakota: 'Ȟáŋ', english: 'To boil' }, { lakota: 'Čhéǧa', english: 'Kettle / Pot' }, { lakota: 'Míla', english: 'Knife' }, { lakota: 'Ohéhaŋ', english: 'To cook' } ] },
+          { type: 'listen-identify', prompt: 'Káǧa', phonetic: 'KAH-gah', meaning: 'To make / To create', options: ['To cook', 'To make', 'To cut', 'To serve'], correct: 1 },
+          { type: 'multiple-choice', prompt: 'After a great meal someone asks "Tuwé káǧe he?" What are they asking?', options: ['Is there more?', 'Where is the cook?', 'Who made this?', 'Is it ready?'], correct: 2, explanation: '"Tuwé káǧe he?" — Who made this? A great way to find out who to thank for the delicious food.' },
         ]
       },
       {
@@ -1524,6 +1534,8 @@ const MODULE_DATA = [
           { type: 'multiple-choice', prompt: 'A cook calls out to the whole camp that food is ready. She says:', options: ['Wóta wo', 'Wóta po', 'Lóčhiŋ he?', 'Wóyute'], correct: 1, explanation: '"Wóta po!" — Everyone eat! The "po" ending addresses a group. Time to get in line!' },
           { type: 'multiple-choice', prompt: 'Someone brings you a plate. You want to accept and show gratitude. You say:', options: ['Hiyá', 'Wóta wo', 'Háŋ, Philámayaye', 'Tokša'], correct: 2, explanation: '"Háŋ, Philámayaye" — Yes, thank you. The perfect response when someone brings you food.' },
           { type: 'match', prompt: 'Match the mealtime phrases:', pairs: [ { lakota: 'Wóta wo', english: 'Eat! (one person)' }, { lakota: 'Wóta po', english: 'Eat! (group)' }, { lakota: 'Lóčhiŋ he?', english: 'Are you hungry?' }, { lakota: 'Yatkáŋ wo', english: 'Drink!' } ] },
+          { type: 'listen-identify', prompt: 'Íyehaŋtu', phonetic: 'EE-yay-hahn-too', meaning: 'It\'s time / The time has come', options: ['It\'s early', 'It\'s late', 'It\'s time', 'It\'s over'], correct: 2 },
+          { type: 'multiple-choice', prompt: 'The cook calls out "Wóyute kiŋ — íyehaŋtu!" What does this mean?', options: ['The food is gone', 'The food is cooking', 'The food — it\'s time!', 'The food is bad'], correct: 2, explanation: '"Íyehaŋtu" — It\'s time! When you hear this at camp, head to the food line. Elders go first.' },
         ]
       },
       {
@@ -1610,6 +1622,9 @@ const MODULE_DATA = [
           { type: 'multiple-choice', prompt: 'During prayer, you hear "Tȟuŋkášila, óŋšimala ye." This means:', options: ['Grandfather, thank you', 'Grandfather, I am here', 'Grandfather, have pity on me', 'Grandfather, watch over us'], correct: 2, explanation: '"Tȟuŋkášila, óŋšimala ye" — Grandfather, have pity on me. One of the most common prayer phrases. "Óŋšimala" means to have compassion, not pity in the negative English sense.' },
           { type: 'multiple-choice', prompt: 'At the end of a prayer, you hear "Hoháŋ." This is similar to:', options: ['Hello', 'Goodbye', 'Amen / Let it be so', 'Thank you'], correct: 2, explanation: 'Hoháŋ — let it be so. Like "Amen" — it affirms and closes the prayer.' },
           { type: 'match', prompt: 'Match the prayer phrases:', pairs: [ { lakota: 'Óŋšimala ye', english: 'Have pity on me' }, { lakota: 'Ómakȟiya ye', english: 'Help me' }, { lakota: 'Čhekíya', english: 'To pray' }, { lakota: 'Hoháŋ', english: 'Let it be so / Amen' } ] },
+          { type: 'listen-identify', prompt: 'Wóčhekiye', phonetic: 'WOH-chay-kee-yay', meaning: 'Prayer / Prayers', options: ['Song', 'Dance', 'Prayer', 'Teaching'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Oúŋspe', phonetic: 'oh-OON-spay', meaning: 'Teaching / Lesson', options: ['Prayer', 'Song', 'Story', 'Teaching'], correct: 3 },
+          { type: 'multiple-choice', prompt: 'An elder says "Wóčhekiye kiŋ hená — oúŋspe tȟáŋka." What does this mean?', options: ['The songs were beautiful', 'The prayers — great teachings', 'The dances were powerful', 'The stories were long'], correct: 1, explanation: '"Wóčhekiye kiŋ hená — oúŋspe tȟáŋka." — Those prayers — great teachings. Prayers at Sundance are themselves teachings. Listening is learning.' },
         ]
       },
       {
@@ -1643,6 +1658,8 @@ const MODULE_DATA = [
           { type: 'multiple-choice', prompt: 'The full Lakota name for Sundance is "Wiwáŋyaŋg Wačhípi." It literally means:', options: ['Dance of sacrifice', 'Gazing at the Sun Dance', 'Prayer to the Creator', 'Circle of life dance'], correct: 1, explanation: '"Wiwáŋyaŋg Wačhípi" — Gazing at the Sun Dance. Dancers gaze toward the sun and the Sacred Tree.' },
           { type: 'multiple-choice', prompt: '"Inipi" means sweat lodge. Its deeper meaning is:', options: ['To suffer', 'To purify', 'To live again', 'To pray alone'], correct: 2, explanation: 'Inipi — "to live again." The sweat lodge is a ceremony of purification and rebirth. You may participate in one before Sundance.' },
           { type: 'match', prompt: 'Match the ceremony words:', pairs: [ { lakota: 'Wiwáŋyaŋg Wačhípi', english: 'Sundance' }, { lakota: 'Inipi', english: 'Sweat lodge' }, { lakota: 'Haŋbléčheya', english: 'Vision quest' }, { lakota: 'Olówaŋ', english: 'Song' } ] },
+          { type: 'listen-identify', prompt: 'Khuží', phonetic: 'khoo-ZHEE', meaning: 'Struggling / Weakened / Having a hard time', options: ['Strong', 'Struggling', 'Dancing', 'Resting'], correct: 1 },
+          { type: 'multiple-choice', prompt: 'During the dance, someone says "Wičháša waŋ khuží" — a man is struggling. What should you do?', options: ['Stay quiet', 'Leave the area', 'Call out encouragement — Hóka hé!', 'Bring him food'], correct: 2, explanation: 'When a dancer is khuží (struggling), your voice matters. Call out "Hóka hé! Íyohlate!" — encouragement lifts them through the hardest moments.' },
         ]
       },
       {
@@ -1728,6 +1745,8 @@ const MODULE_DATA = [
           { type: 'multiple-choice', prompt: 'The sunset at Sundance takes your breath away. You say "Lílá wašté!" This means:', options: ['A little good', 'Not good', 'Very good! / Really beautiful!', 'Somewhat good'], correct: 2, explanation: '"Lílá wašté!" — Very good! Really beautiful! "Lílá" is a power word — it intensifies everything.' },
           { type: 'multiple-choice', prompt: 'Someone shares a teaching with you and it moves you deeply. You say:', options: ['Čhaŋtéšiča', 'Wópilaštaya', 'Sníya', 'Lílá waṫȟáka'], correct: 1, explanation: '"Wópilaštaya" — I am grateful. A beautiful word to offer when someone gives you something meaningful.' },
           { type: 'match', prompt: 'Match the feelings:', pairs: [ { lakota: 'Lílá', english: 'Very / Really' }, { lakota: 'Čhaŋtéšiča', english: 'Sad' }, { lakota: 'Wópilaštaya', english: 'I am grateful' }, { lakota: 'Sníya', english: 'Cold' } ] },
+          { type: 'listen-identify', prompt: 'Héčhetu yeló', phonetic: 'HAY-chay-too yay-LOH', meaning: 'That is so / Indeed (said by men)', options: ['I don\'t know', 'That is so', 'Maybe', 'Not really'], correct: 1 },
+          { type: 'multiple-choice', prompt: 'An elder shares a teaching. You want to show you\'re listening and agree. You say:', options: ['Philámayaye', 'Tokša akhé', 'Háŋ, háŋ... héčhetu yeló', 'Hóka hé'], correct: 2, explanation: '"Háŋ, háŋ... héčhetu yeló" — Yes, yes... that is so. Active listening with quiet affirmation shows deep respect during teachings.' },
         ]
       },
       {
@@ -1759,6 +1778,9 @@ const MODULE_DATA = [
           { type: 'multiple-choice', prompt: 'You hear thunder during ceremony. Someone near you whispers "Wakíŋyaŋ..." You understand this means:', options: ['It\'s going to rain', 'The Thunder Being is speaking', 'We should go inside', 'The ceremony is over'], correct: 1, explanation: 'The Wakíŋyaŋ — the Thunder Being — is present. You learned this in Module 4. At Sundance, thunder during ceremony is significant.' },
           { type: 'multiple-choice', prompt: 'You want to ask where the water is. You say:', options: ['Mní wašté', 'Tukté mní he?', 'Mní wóta', 'Yatkáŋ mní'], correct: 1, explanation: '"Tukté mní he?" — Where is the water? Combining Module 3 vocabulary with Module 7 question skills.' },
           { type: 'match', prompt: 'Match the camp phrases:', pairs: [ { lakota: 'Lílá taŋyáŋ waúŋ', english: 'I am very well' }, { lakota: 'Tokša akhé', english: 'See you again' }, { lakota: 'Philámayaye, Uŋčí', english: 'Thank you, Grandmother' }, { lakota: 'Tukté mní he?', english: 'Where is the water?' } ] },
+          { type: 'listen-identify', prompt: 'Ówakhiye kte', phonetic: 'OH-wah-kee-yay ktay', meaning: 'I will help', options: ['I need help', 'I will help', 'Can you help?', 'Help me'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Yahé kte he?', phonetic: 'yah-HAY ktay hay', meaning: 'Are you leaving?', options: ['Are you coming?', 'Are you staying?', 'Are you leaving?', 'Are you ready?'], correct: 2 },
+          { type: 'multiple-choice', prompt: 'People are setting up and could use help. You walk over and say:', options: ['Slolwáye šni', 'Ówakhiye kte!', 'Tokša akhé', 'Yahé kte he?'], correct: 1, explanation: '"Ówakhiye kte!" — I will help! Volunteering before being asked is the Lakota way. Generosity in action.' },
         ]
       },
       {
@@ -1811,6 +1833,8 @@ const MODULE_DATA = [
           { type: 'multiple-choice', prompt: 'You see people setting up a tent but you don\'t know what to do. You walk over and say:', options: ['Slolwáye šni', 'Táku ečhámuŋ kta he?', 'Wóta waúŋ', 'Tokša akhé'], correct: 1, explanation: '"Táku ečhámuŋ kta he?" — What should I do? You just showed up ready to work. That\'s how you earn respect at camp.' },
           { type: 'multiple-choice', prompt: 'The fire is low and someone needs firewood. You volunteer by saying:', options: ['Pȟéta wašté', 'Čhaŋ awakú kte', 'Tukté čhaŋ he?', 'Čhaŋ Wákȟaŋ'], correct: 1, explanation: '"Čhaŋ awakú kte" — I will bring firewood. "Čhaŋ" (wood) + "awakú kte" (I will bring). Action speaks louder than words.' },
           { type: 'match', prompt: 'Match the helper phrases:', pairs: [ { lakota: 'Óčhičhiya oyákihi he?', english: 'Can I help you?' }, { lakota: 'Táku ečhámuŋ kta he?', english: 'What should I do?' }, { lakota: 'Mní awakú kte', english: 'I will bring water' }, { lakota: 'Čhaŋ awakú kte', english: 'I will bring firewood' } ] },
+          { type: 'listen-identify', prompt: 'Thípi', phonetic: 'TEE-pee', meaning: 'Tipi / Dwelling / Lodge', options: ['Tent', 'Tipi', 'Kitchen', 'Arbor'], correct: 1 },
+          { type: 'multiple-choice', prompt: 'Someone says "Thípi kiŋ hé ečhúŋ po!" — they want everyone to help set up the tipi. You respond:', options: ['Tokša akhé', 'Oháŋ! Táku ečhámuŋ kta he?', 'Slolwáye šni', 'Wóta po'], correct: 1, explanation: '"Oháŋ! Táku ečhámuŋ kta he?" — Yes! What should I do? Show up willing and ask for direction. The thípi is the family\'s home at Sundance.' },
         ]
       },
       {
@@ -1826,6 +1850,8 @@ const MODULE_DATA = [
           { type: 'multiple-choice', prompt: 'A round of dancing ends. The intercessor prays. At the end, everyone says together:', options: ['Philámayaye', 'Tokša akhé', 'Mitákuye Oyásʼiŋ', 'Hoháŋ'], correct: 2, explanation: '"Mitákuye Oyásʼiŋ" — We are all related. Said together, by everyone, at the end of each prayer. Say it with them.' },
           { type: 'multiple-choice', prompt: 'You want to tell a dancer "I love you" / "I hold you dear" before they enter the arbor. You say:', options: ['Lílá wašté', 'Philámayaye', 'Thečhíȟila', 'Wópilaštaya'], correct: 2, explanation: '"Thečhíȟila" — I love you, I hold you dear. One of the most beautiful words in the Lakota language. Say it to your relatives.' },
           { type: 'match', prompt: 'Match the arbor words:', pairs: [ { lakota: 'Hóka hé', english: 'Encouragement ("Let\'s go!")' }, { lakota: 'Íyohlate', english: 'Be strong / Endure' }, { lakota: 'Thečhíȟila', english: 'I love you' }, { lakota: 'Mitákuye Oyásʼiŋ', english: 'We are all related' } ] },
+          { type: 'listen-identify', prompt: 'Wačhíŋtȟaŋka yo', phonetic: 'wah-CHEEN-tahn-kah yoh', meaning: 'Be strong! / Have courage! (to a man)', options: ['Be quiet!', 'Be strong!', 'Be careful!', 'Be patient!'], correct: 1 },
+          { type: 'multiple-choice', prompt: 'A dancer you care about is pushing through the hardest part. You combine everything you know and call out:', options: ['Tokša akhé!', 'Wóta po!', 'Hóka hé! Wačhíŋtȟaŋka yo! Íyohlate!', 'Philámayaye!'], correct: 2, explanation: '"Hóka hé! Wačhíŋtȟaŋka yo! Íyohlate!" — Let\'s go! Be strong! Endure! Three powerful encouragements together. Your voice carries them through.' },
         ]
       },
       {
