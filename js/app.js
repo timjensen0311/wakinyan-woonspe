@@ -39,8 +39,8 @@ const App = {
             el.classList.remove('striking');
             el.classList.add('fading');
             setTimeout(() => el.classList.remove('fading'), 250);
-            // Wait a random interval before the next strike (6-18 seconds)
-            setTimeout(strike, 6000 + Math.random() * 12000);
+            // Wait a random interval before the next strike (2-8 seconds)
+            setTimeout(strike, 2000 + Math.random() * 6000);
             return;
           }
           el.classList.add('striking');
