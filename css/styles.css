@@ -1357,6 +1357,61 @@ body {
   margin-top: 28px;
 }
 
+/* ==========================================================
+   SUNDANCE PRACTICE
+   ========================================================== */
+.stats-row-single {
+  margin-bottom: 12px;
+}
+.stats-row-single .stat-card {
+  width: 100%;
+}
+.stat-sundance {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border-color: rgba(232, 219, 184, 0.15);
+  background: linear-gradient(135deg, rgba(232, 219, 184, 0.06), var(--card-bg));
+}
+.stat-sundance:hover {
+  border-color: var(--warm-glow);
+  background: linear-gradient(135deg, rgba(232, 219, 184, 0.12), var(--card-bg));
+  box-shadow: 0 4px 20px rgba(232, 219, 184, 0.08);
+}
+.stat-sundance .stat-icon { color: var(--warm-glow); }
+.stat-sundance .stat-label { color: var(--warm-glow-bright); }
+.sundance-situation {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--lightning-bright);
+  text-align: center;
+  padding: 28px 16px 12px;
+  margin-bottom: 8px;
+  text-shadow: 0 0 30px rgba(168, 200, 240, 0.15);
+  border: 1px solid rgba(232, 219, 184, 0.12);
+  border-radius: var(--radius-md);
+  background: rgba(232, 219, 184, 0.04);
+  line-height: 1.3;
+}
+.scenario-context {
+  font-size: 15px;
+  color: var(--text-secondary);
+  text-align: center;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.scenario-response {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--warm-glow);
+  text-align: center;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
 /* ==========================================================================
    ENTRANCE ANIMATIONS
    ========================================================================== */

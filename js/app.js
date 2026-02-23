@@ -217,16 +217,24 @@ const App = {
         <div class="countdown-unit">days remaining</div>
       </div>
 
-      <div class="stats-row anim-fade-up">
+      <div class="stats-row-single anim-fade-up">
         <div class="stat-card card">
           <div class="stat-number">${wordCount}</div>
           <div class="stat-label">Words Learned</div>
           <div class="stat-sub">${totalWords > 0 ? `of ${totalWords} total` : ''}</div>
         </div>
+      </div>
+
+      <div class="stats-row anim-fade-up">
         <div class="stat-card card stat-review ${wordCount === 0 ? 'disabled' : ''}" ${wordCount > 0 ? 'onclick="App.showReview()"' : ''}>
           <div class="stat-icon">${LakotaIcons.redRoad(32)}</div>
           <div class="stat-label">Review</div>
           <div class="stat-sub">Flashcards</div>
+        </div>
+        <div class="stat-card card stat-sundance" onclick="App.showSundancePractice()">
+          <div class="stat-icon">${LakotaIcons.sundanceSun(32)}</div>
+          <div class="stat-label">Sundance</div>
+          <div class="stat-sub">Practice</div>
         </div>
       </div>
 
@@ -369,6 +377,160 @@ const App = {
     this._reviewIndex++;
     this._reviewFlipped = false;
     this._renderReviewCard();
+  },
+
+  // ========================================================================
+  // SUNDANCE PRACTICE
+  // ========================================================================
+  showSundancePractice() {
+    const shuffled = [...SUNDANCE_SCENARIOS].sort(() => Math.random() - 0.5);
+    this._sundanceScenarios = shuffled;
+    this._sundanceIndex = 0;
+    this._sundanceCorrect = 0;
+    this._sundanceFlipped = false;
+    this._renderSundanceScenario();
+  },
+
+  _renderSundanceScenario() {
+    const scenarios = this._sundanceScenarios;
+    const i = this._sundanceIndex;
+    const total = scenarios.length;
+
+    if (i >= total) {
+      // Practice complete
+      this.container.innerHTML = `
+        <div class="review-screen anim-fade-up">
+          <button class="back-btn" onclick="App.showHome()">←</button>
+          <div class="review-done">
+            <div class="review-done-icon">${LakotaIcons.sundanceSun(48)}</div>
+            <h2 class="t-display review-done-title">Practice Complete!</h2>
+            <p class="review-done-stat">${this._sundanceCorrect} of ${total} scenarios</p>
+            <p class="review-done-sub">You're building the confidence to participate at Sundance. Every practice brings you closer to your relatives.</p>
+            <button class="btn btn-primary btn-lg" onclick="App.showSundancePractice()" style="margin-top:24px">Practice Again</button>
+            <button class="btn btn-lg" onclick="App.showHome()" style="margin-top:12px">Back to Home</button>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    const s = scenarios[i];
+    const pct = Math.round((i / total) * 100);
+
+    if (s.type === 'multiple-choice') {
+      const letters = ['A', 'B', 'C', 'D'];
+      const optionsHtml = s.options.map((opt, j) => `
+        <button class="option-btn" data-index="${j}">
+          <span class="option-letter">${letters[j]}</span>${opt}
+        </button>
+      `).join('');
+
+      this.container.innerHTML = `
+        <div class="review-screen anim-fade-up">
+          <div class="review-top-bar">
+            <button class="back-btn" onclick="App.showHome()">←</button>
+            <div class="review-counter">${i + 1} / ${total}</div>
+          </div>
+          <div class="review-progress-bar">
+            <div class="review-progress-fill" style="width:${pct}%"></div>
+          </div>
+          <div class="review-module-tag">Sundance Practice</div>
+
+          <div class="sundance-situation">${s.situation}</div>
+          <div class="scenario-context">${s.context}</div>
+
+          <div class="options-grid">${optionsHtml}</div>
+          <div id="feedback-area"></div>
+          <button class="btn btn-primary btn-lg" id="sundance-continue" style="display:none" onclick="App._sundanceNext()">Continue</button>
+        </div>
+      `;
+
+      this._bindSundanceOptions(s);
+    } else {
+      // flashcard
+      this.container.innerHTML = `
+        <div class="review-screen anim-fade-up">
+          <div class="review-top-bar">
+            <button class="back-btn" onclick="App.showHome()">←</button>
+            <div class="review-counter">${i + 1} / ${total}</div>
+          </div>
+          <div class="review-progress-bar">
+            <div class="review-progress-fill" style="width:${pct}%"></div>
+          </div>
+          <div class="review-module-tag">Sundance Practice</div>
+
+          <div class="flashcard ${this._sundanceFlipped ? 'flipped' : ''}" onclick="App._flipSundanceCard()">
+            <div class="flashcard-inner">
+              <div class="flashcard-front">
+                <div class="flashcard-lakota t-display" style="font-size:30px;margin-bottom:12px">${s.situation}</div>
+                <div class="scenario-context" style="margin-bottom:16px">${s.context}</div>
+                <div class="flashcard-hint">Tap to see response</div>
+              </div>
+              <div class="flashcard-back">
+                <div class="scenario-response">${s.response}</div>
+                <div class="flashcard-lakota-sm" style="margin-top:12px;font-style:normal;color:var(--text-secondary);font-size:15px;font-family:var(--font-body)">${s.responseEnglish}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-buttons ${this._sundanceFlipped ? 'visible' : ''}">
+            <button class="review-btn review-btn-learning" onclick="App._sundanceNext()">
+              <span>→</span> Next
+            </button>
+            <button class="review-btn review-btn-known" onclick="App._sundanceNext()">
+              <span>✓</span> Got It
+            </button>
+          </div>
+        </div>
+      `;
+    }
+  },
+
+  _bindSundanceOptions(scenario) {
+    const options = document.querySelectorAll('.option-btn');
+    let answered = false;
+
+    options.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (answered) return;
+        answered = true;
+
+        const idx = parseInt(btn.dataset.index);
+        const isCorrect = idx === scenario.correct;
+
+        options.forEach(b => b.classList.add('disabled'));
+        btn.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+        if (!isCorrect) {
+          options[scenario.correct].classList.add('correct');
+        } else {
+          this._sundanceCorrect++;
+        }
+
+        const feedbackArea = document.getElementById('feedback-area');
+        feedbackArea.innerHTML = `
+          <div class="feedback ${isCorrect ? 'correct' : 'incorrect'}">
+            <div class="feedback-title">${isCorrect ? 'Háŋ! Correct!' : 'Not quite'}</div>
+            <div class="feedback-text">${scenario.explanation}</div>
+          </div>
+        `;
+
+        document.getElementById('sundance-continue').style.display = '';
+      });
+    });
+  },
+
+  _flipSundanceCard() {
+    if (this._sundanceFlipped) return;
+    this._sundanceFlipped = true;
+    this._sundanceCorrect++;
+    this._renderSundanceScenario();
+  },
+
+  _sundanceNext() {
+    this._sundanceIndex++;
+    this._sundanceFlipped = false;
+    this._renderSundanceScenario();
   },
 
   // ========================================================================

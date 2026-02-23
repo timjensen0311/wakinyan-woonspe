@@ -1872,3 +1872,204 @@ const MODULE_DATA = [
     ]
   }
 ];
+
+// ==========================================================================
+// SUNDANCE PRACTICE SCENARIOS
+// Conversational situations you'll encounter at Sundance
+// ==========================================================================
+
+const SUNDANCE_SCENARIOS = [
+  // --- Greetings & Introductions ---
+  {
+    type: 'multiple-choice',
+    situation: 'Háu, Kȟolá! Tókheškhe yaúŋ he?',
+    context: 'A relative greets you at camp and asks how you are.',
+    options: [
+      'Taŋyáŋ waúŋ, philámayaye! Níš eníš?',
+      'Wóta po!',
+      'Tokša akhé',
+      'Hiyá, wašté šni'
+    ],
+    correct: 0,
+    explanation: '"Taŋyáŋ waúŋ, philámayaye! Níš eníš?" — I\'m doing well, thank you! And you? A warm, proper response to someone checking on you.'
+  },
+  {
+    type: 'flashcard',
+    situation: 'Háu! Tuwé ničá he?',
+    context: 'Someone at camp asks who you are — introduce yourself.',
+    response: '[Your name] emáčiyapi. Čhaŋté wašté napé čhiyúzapi.',
+    responseEnglish: 'My name is [your name]. I shake your hand with a good heart.'
+  },
+  {
+    type: 'multiple-choice',
+    situation: 'Háŋ, takóža. Taŋyáŋ yahí!',
+    context: 'A grandmother welcomes you: "Hello, grandchild. You arrived well!"',
+    options: [
+      'Háŋ, Uŋčí! Philámayaye — čhaŋté mašká!',
+      'Hóka hé!',
+      'Wóta po!',
+      'Tukté he?'
+    ],
+    correct: 0,
+    explanation: '"Háŋ, Uŋčí! Philámayaye — čhaŋté mašká!" — Hello, Grandmother! Thank you — my heart is happy! A loving greeting in return.'
+  },
+  // --- How are you / Checking in ---
+  {
+    type: 'flashcard',
+    situation: 'Tókheškhe yaúŋ he?',
+    context: 'Someone asks "How are you?"',
+    response: 'Taŋyáŋ waúŋ. Aŋpétu wašté!',
+    responseEnglish: 'I\'m doing well. It\'s a beautiful day!'
+  },
+  {
+    type: 'multiple-choice',
+    situation: 'Lé aŋpétu wašté — tókheškhe yaúŋ he?',
+    context: '"It\'s a good day — how are you doing?"',
+    options: [
+      'Hiyá',
+      'Wóta wo',
+      'Taŋyáŋ waúŋ, philámayaye!',
+      'Tokša akhé'
+    ],
+    correct: 2,
+    explanation: '"Taŋyáŋ waúŋ, philámayaye!" — I\'m well, thank you! A natural, grateful response.'
+  },
+  // --- Offering to help ---
+  {
+    type: 'flashcard',
+    situation: 'Míni yačhíŋ he?',
+    context: 'Someone asks "Do you want water?"',
+    response: 'Háŋ, philámayaye! Míni wašté.',
+    responseEnglish: 'Yes, thank you! Water is good.'
+  },
+  {
+    type: 'multiple-choice',
+    situation: 'Čhaŋ aú po — ókhiyapi čha!',
+    context: '"Bring firewood — we need help!"',
+    options: [
+      'Hiyá, bluzáhaŋ',
+      'Oháŋ! Ówakhiye kte!',
+      'Tokša akhé',
+      'Wóta po'
+    ],
+    correct: 1,
+    explanation: '"Oháŋ! Ówakhiye kte!" — Yes! I will help! Generosity and willingness to help is central to camp life.'
+  },
+  {
+    type: 'flashcard',
+    situation: 'Thípi kiŋ hé ečhúŋ po!',
+    context: 'You\'re asked to help set up the tipi.',
+    response: 'Oháŋ! Tókheškhe ečhámuŋ kte he?',
+    responseEnglish: 'Yes! How should I do it? (Showing willingness and humility.)'
+  },
+  {
+    type: 'multiple-choice',
+    situation: 'Míni akú wo — wičhášta kiŋ ípuzapi.',
+    context: '"Bring water — the men are thirsty."',
+    options: [
+      'Oháŋ, míni awakú kte!',
+      'Hiyá, owákhi šni',
+      'Mitákuye Oyásʼiŋ',
+      'Wóphila tȟáŋka'
+    ],
+    correct: 0,
+    explanation: '"Oháŋ, míni awakú kte!" — Yes, I will bring water! At Sundance, supporters bring water to those who need it — a sacred act of service.'
+  },
+  // --- Prayer moments ---
+  {
+    type: 'multiple-choice',
+    situation: 'Wóčhekiye kiŋ hená — oúŋspe tȟáŋka.',
+    context: 'An elder says: "Those prayers — great teachings." How do you acknowledge this?',
+    options: [
+      'Háŋ, háŋ... héčhetu yeló.',
+      'Wóta po!',
+      'Tukté he?',
+      'Tokša akhé'
+    ],
+    correct: 0,
+    explanation: '"Háŋ, háŋ... héčhetu yeló." — Yes, yes... that is so. Active listening and quiet affirmation during teachings shows deep respect.'
+  },
+  {
+    type: 'flashcard',
+    situation: 'Wóčhekiye kiŋ iháŋke — nitȟúŋwaŋ.',
+    context: 'The prayer is ending. Everyone looks to you.',
+    response: 'Mitákuye Oyásʼiŋ.',
+    responseEnglish: 'We are all related. (Said together at the close of every prayer.)'
+  },
+  {
+    type: 'multiple-choice',
+    situation: 'Wakȟáŋ Tȟáŋka uŋsímala yo — lé aŋpétu wašté.',
+    context: '"Great Spirit, have pity on us — this is a good day." What do you say at the end?',
+    options: [
+      'Philámayaye',
+      'Mitákuye Oyásʼiŋ',
+      'Háu, Kȟolá',
+      'Wóta wo'
+    ],
+    correct: 1,
+    explanation: '"Mitákuye Oyásʼiŋ" — We are all related. The phrase that closes every prayer and holds the entire Lakota worldview.'
+  },
+  // --- Encouragement at the arbor ---
+  {
+    type: 'multiple-choice',
+    situation: 'Wačhípi kiŋ — wičháša waŋ khuží.',
+    context: 'During the dance, a dancer is struggling. What do you call out?',
+    options: [
+      'Tokša akhé!',
+      'Hóka hé! Wačhíŋtȟaŋka yo!',
+      'Taŋyáŋ waúŋ',
+      'Philámayaye'
+    ],
+    correct: 1,
+    explanation: '"Hóka hé! Wačhíŋtȟaŋka yo!" — Let\'s go! Be strong! Your voice lifts the dancer when they need it most.'
+  },
+  {
+    type: 'flashcard',
+    situation: 'Wačhípi kiŋ — škaŋškaŋ!',
+    context: 'The dance is intense — everyone is calling out encouragement.',
+    response: 'Hóka hé! Íyohlate! Wačhíŋtȟaŋka yo!',
+    responseEnglish: 'Let\'s go! You can do it! Be strong! (Encouragement for the dancers.)'
+  },
+  // --- Mealtime ---
+  {
+    type: 'multiple-choice',
+    situation: 'Wóyute kiŋ — íyehaŋtu!',
+    context: '"The food — it\'s time!" Everyone is called to eat.',
+    options: [
+      'Hiyá, wašté šni',
+      'Tokša akhé',
+      'Wóta po! Philámayaye!',
+      'Tukté he?'
+    ],
+    correct: 2,
+    explanation: '"Wóta po! Philámayaye!" — Eat, everyone! Thank you! At Sundance, meals are communal and gratitude is always expressed.'
+  },
+  {
+    type: 'flashcard',
+    situation: 'Wóyute kiŋ wašté — tuwé káǧe he?',
+    context: '"The food is good — who made it?"',
+    response: 'Wóyute kiŋ lílá wašté! Philámayaye!',
+    responseEnglish: 'The food is very good! Thank you! (Always express gratitude for the cooks.)'
+  },
+  // --- Gratitude & Farewell ---
+  {
+    type: 'multiple-choice',
+    situation: 'Yahé kte he? Tokša akhé, Kȟolá.',
+    context: '"Are you leaving? See you again, friend."',
+    options: [
+      'Háu — wóta wo!',
+      'Tokša akhé, Mitákuye Oyásʼiŋ. Thečhíȟilapi.',
+      'Hóka hé!',
+      'Tukté he?'
+    ],
+    correct: 1,
+    explanation: '"Tokša akhé, Mitákuye Oyásʼiŋ. Thečhíȟilapi." — See you again, all my relatives. I love you all. The most heartfelt Lakota farewell.'
+  },
+  {
+    type: 'flashcard',
+    situation: 'Wóphila tȟáŋka — lé Wiwáŋyaŋg Wačhípi wašté.',
+    context: 'An elder expresses deep gratitude: "Great thanks — this was a good Sundance."',
+    response: 'Háŋ, Tȟuŋkášila. Wóphila tȟáŋka. Čhaŋté wašté yá yo.',
+    responseEnglish: 'Yes, Grandfather. Deep gratitude. Go with a good heart.'
+  },
+];
