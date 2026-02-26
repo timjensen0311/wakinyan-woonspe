@@ -259,4 +259,42 @@ const LakotaIcons = {
       </g>
     </svg>`;
   },
+
+  // Module 9: Beyond the Circle — Dreamcatcher (expanding knowledge outward)
+  dreamcatcher(size = 42) {
+    return `<svg width="${size}" height="${size}" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g fill="currentColor">
+        <!-- Outer hoop -->
+        <circle cx="50" cy="38" r="30" stroke="currentColor" stroke-width="3.5" fill="none"/>
+        <!-- Inner web pattern -->
+        <circle cx="50" cy="38" r="18" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+        <circle cx="50" cy="38" r="7" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.35"/>
+        <!-- Web spokes -->
+        <line x1="50" y1="8" x2="50" y2="20" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <line x1="50" y1="56" x2="50" y2="68" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <line x1="20" y1="38" x2="32" y2="38" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <line x1="68" y1="38" x2="80" y2="38" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <line x1="29" y1="17" x2="38" y2="25" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <line x1="62" y1="51" x2="71" y2="59" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <line x1="71" y1="17" x2="62" y2="25" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <line x1="38" y1="51" x2="29" y2="59" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+        <!-- Center spirit hole -->
+        <circle cx="50" cy="38" r="2.5"/>
+        <!-- Three hanging feathers -->
+        <!-- Left feather -->
+        <line x1="36" y1="66" x2="32" y2="78" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+        <path d="M32 78 Q28 84 30 92 L32 92 Q34 84 32 78 Z" opacity="0.6"/>
+        <!-- Center feather -->
+        <line x1="50" y1="68" x2="50" y2="80" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+        <path d="M50 80 Q46 86 48 96 L52 96 Q54 86 50 80 Z" opacity="0.7"/>
+        <!-- Right feather -->
+        <line x1="64" y1="66" x2="68" y2="78" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+        <path d="M68 78 Q72 84 70 92 L68 92 Q66 84 68 78 Z" opacity="0.6"/>
+        <!-- Small beads on strings -->
+        <circle cx="34" cy="72" r="1.5" opacity="0.5"/>
+        <circle cx="50" cy="74" r="1.5" opacity="0.5"/>
+        <circle cx="66" cy="72" r="1.5" opacity="0.5"/>
+      </g>
+    </svg>`;
+  },
 };

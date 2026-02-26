@@ -1896,6 +1896,125 @@ const MODULE_DATA = [
         ]
       }
     ]
+  },
+  {
+    id: 'module-09',
+    number: 9,
+    iconKey: 'dreamcatcher',
+    title: 'Beyond the Circle',
+    lakota: 'Čhaŋkú Glákiŋyaŋ',
+    desc: 'Broaden your Lakȟótiyapi — body, colors, animals, actions, and the world around you.',
+    lessons: [
+      {
+        id: 'L9-01',
+        title: 'The Body — Taŋčháŋ',
+        subtitle: 'Knowing the body in Lakȟótiyapi',
+        exercises: [
+          { type: 'cultural-note', title: 'The Body Is Sacred', text: 'In the Lakota worldview, the body — Taŋčháŋ — is sacred. It is the vessel that carries your spirit through this world. At Sundance, the dancers offer their bodies in prayer. Knowing the words for the body connects you to a deeper understanding of health, healing, and the wholeness of being.\n\nThese words come from generations of knowledge — healers, warriors, grandmothers, and children all sharing the same language for the same sacred vessel.' },
+          { type: 'listen-identify', prompt: 'Natá', phonetic: 'nah-TAH', meaning: 'Head', options: ['Hand', 'Foot', 'Head', 'Heart'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Ištá', phonetic: 'eesh-TAH', meaning: 'Eye', options: ['Ear', 'Eye', 'Nose', 'Mouth'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Núge', phonetic: 'NOO-gay', meaning: 'Ear', options: ['Eye', 'Nose', 'Ear', 'Mouth'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Pahú', phonetic: 'pah-HOO', meaning: 'Nose', options: ['Nose', 'Ear', 'Eye', 'Head'], correct: 0 },
+          { type: 'listen-identify', prompt: 'Í', phonetic: 'EE', meaning: 'Mouth', options: ['Eye', 'Mouth', 'Nose', 'Ear'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Napé', phonetic: 'nah-PAY', meaning: 'Hand', options: ['Foot', 'Hand', 'Arm', 'Finger'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Sí', phonetic: 'SHEE', meaning: 'Foot', options: ['Hand', 'Leg', 'Foot', 'Toe'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Čhaŋkpé', phonetic: 'chahn-KPAY', meaning: 'Knee', options: ['Elbow', 'Knee', 'Ankle', 'Shoulder'], correct: 1 },
+          { type: 'multiple-choice', prompt: '"Ištá" and "Núge" are the words for which pair?', options: ['Hand and Foot', 'Eye and Ear', 'Head and Heart', 'Nose and Mouth'], correct: 1, explanation: 'Ištá — Eye. Núge — Ear. The senses through which you receive the world.' },
+          { type: 'match', prompt: 'Match the body words:', pairs: [ { lakota: 'Natá', english: 'Head' }, { lakota: 'Napé', english: 'Hand' }, { lakota: 'Sí', english: 'Foot' }, { lakota: 'Í', english: 'Mouth' } ] },
+        ]
+      },
+      {
+        id: 'L9-02',
+        title: 'Colors — Ówapi',
+        subtitle: 'Lutá, Ská, Sapá, Zí, Tȟó, Ǧí',
+        exercises: [
+          { type: 'cultural-note', title: 'Colors Carry Meaning', text: 'In Lakota culture, colors are not just descriptions — they carry spiritual significance. You\'ve already learned that the four directions each have a sacred color: Red (East), White (North), Black (West), and Yellow (South).\n\nNow you\'ll learn these colors as standalone words, along with others. Color words in Lakota usually follow the noun they describe: šúŋka sapá means "black dog," makȟá ská means "white earth."' },
+          { type: 'listen-identify', prompt: 'Lutá', phonetic: 'loo-TAH', meaning: 'Red', options: ['Black', 'Red', 'White', 'Yellow'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Ská', phonetic: 'SKAH', meaning: 'White', options: ['White', 'Black', 'Blue', 'Red'], correct: 0 },
+          { type: 'listen-identify', prompt: 'Sapá', phonetic: 'shah-PAH', meaning: 'Black', options: ['White', 'Red', 'Yellow', 'Black'], correct: 3 },
+          { type: 'listen-identify', prompt: 'Zí', phonetic: 'ZEE', meaning: 'Yellow', options: ['Green', 'Yellow', 'Blue', 'Brown'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Tȟó', phonetic: 'TOH (breathy)', meaning: 'Blue / Green', options: ['Red', 'Yellow', 'Blue / Green', 'Brown'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Ǧí', phonetic: 'GHEE (throaty)', meaning: 'Brown / Tan', options: ['Gray', 'Brown / Tan', 'Black', 'Yellow'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Hóta', phonetic: 'HOH-tah', meaning: 'Gray', options: ['Brown', 'White', 'Gray', 'Black'], correct: 2 },
+          { type: 'multiple-choice', prompt: 'The word "Tȟó" covers which colors?', options: ['Red and Orange', 'Black and Gray', 'Blue and Green', 'Yellow and Brown'], correct: 2, explanation: 'Tȟó covers both blue and green. Many Indigenous languages group these together as one color concept.' },
+          { type: 'multiple-choice', prompt: 'An eagle feather is white and black. In Lakota those colors are:', options: ['Lutá na Zí', 'Ská na Sapá', 'Tȟó na Ǧí', 'Hóta na Lutá'], correct: 1, explanation: 'Ská (White) na Sapá (Black) — the sacred colors of the eagle feather.' },
+          { type: 'match', prompt: 'Match the colors:', pairs: [ { lakota: 'Lutá', english: 'Red' }, { lakota: 'Sapá', english: 'Black' }, { lakota: 'Ská', english: 'White' }, { lakota: 'Zí', english: 'Yellow' } ] },
+        ]
+      },
+      {
+        id: 'L9-03',
+        title: 'More Animal Relatives',
+        subtitle: 'Héȟaka, Maštíŋčala, Kȟeǧá, Uŋčéǧila',
+        exercises: [
+          { type: 'cultural-note', title: 'All Creatures Are Related', text: 'You\'ve already met the sacred four — Tȟatȟáŋka (Buffalo), Waŋblí (Eagle), Mathó (Bear), and Šuŋgmánitu Tȟáŋka (Wolf). Now meet more of the animal relatives.\n\nEach animal carries teachings. The elk (Héȟaka) teaches endurance. The rabbit (Maštíŋčala) teaches awareness. The turtle (Kȟeǧá) carries the world on its back — Turtle Island, the Indigenous name for this continent. The spider (Iktómi) is the trickster who teaches through mischief.' },
+          { type: 'listen-identify', prompt: 'Héȟaka', phonetic: 'HAY-hah-kah', meaning: 'Elk', options: ['Deer', 'Elk', 'Moose', 'Buffalo'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Tȟáȟča', phonetic: 'TAH-hchah', meaning: 'Deer', options: ['Elk', 'Horse', 'Deer', 'Antelope'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Maštíŋčala', phonetic: 'mah-SHTEEN-chah-lah', meaning: 'Rabbit', options: ['Mouse', 'Squirrel', 'Rabbit', 'Prairie Dog'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Kȟeǧá', phonetic: 'KAY-gah (throaty)', meaning: 'Turtle', options: ['Frog', 'Turtle', 'Snake', 'Lizard'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Iktómi', phonetic: 'eek-TOH-mee', meaning: 'Spider (the Trickster)', options: ['Ant', 'Spider', 'Butterfly', 'Beetle'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Uŋčéǧila', phonetic: 'oon-CHAY-ghee-lah', meaning: 'Snake', options: ['Worm', 'Lizard', 'Turtle', 'Snake'], correct: 3 },
+          { type: 'listen-identify', prompt: 'Hogáŋ', phonetic: 'hoh-GAHN', meaning: 'Fish', options: ['Fish', 'Frog', 'Otter', 'Turtle'], correct: 0 },
+          { type: 'listen-identify', prompt: 'Kȟaŋǧí', phonetic: 'KAHN-ghee', meaning: 'Crow', options: ['Eagle', 'Hawk', 'Owl', 'Crow'], correct: 3 },
+          { type: 'multiple-choice', prompt: 'Iktómi the Spider is known in Lakota tradition as:', options: ['The healer', 'The trickster', 'The warrior', 'The protector'], correct: 1, explanation: 'Iktómi is the sacred trickster — teaching lessons through stories of mischief and cleverness. Every culture needs a trickster.' },
+          { type: 'match', prompt: 'Match the animal relatives:', pairs: [ { lakota: 'Héȟaka', english: 'Elk' }, { lakota: 'Kȟeǧá', english: 'Turtle' }, { lakota: 'Maštíŋčala', english: 'Rabbit' }, { lakota: 'Kȟaŋǧí', english: 'Crow' } ] },
+        ]
+      },
+      {
+        id: 'L9-04',
+        title: 'Actions & Verbs',
+        subtitle: 'Máni, Íŋyaŋka, Lowáŋ, Wačhí',
+        exercises: [
+          { type: 'cultural-note', title: 'Doing and Being', text: 'Lakota verbs are the heartbeat of the language. Unlike English, Lakota verbs change form depending on who is doing the action — the pronoun is built right into the verb.\n\nFor now, you\'ll learn the base forms. These are the roots you\'ll hear at Sundance, at camp, and in everyday life. When someone says "Lowáŋ po!" they\'re calling everyone to sing. When you hear "Máni yo!" someone is being told to walk.' },
+          { type: 'listen-identify', prompt: 'Máni', phonetic: 'MAH-nee', meaning: 'Walk', options: ['Run', 'Walk', 'Stand', 'Sit'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Íŋyaŋka', phonetic: 'EEN-yahn-kah', meaning: 'Run', options: ['Walk', 'Jump', 'Run', 'Dance'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Lowáŋ', phonetic: 'loh-WAHN', meaning: 'Sing', options: ['Pray', 'Sing', 'Dance', 'Cry'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Wačhí', phonetic: 'wah-CHEE', meaning: 'Dance', options: ['Sing', 'Pray', 'Dance', 'Walk'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Čhéya', phonetic: 'CHAY-yah', meaning: 'Cry', options: ['Laugh', 'Cry', 'Sing', 'Shout'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Iȟáȟa', phonetic: 'ee-HAH-hah', meaning: 'Laugh', options: ['Cry', 'Smile', 'Laugh', 'Talk'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Nážiŋ', phonetic: 'NAH-zheen', meaning: 'Stand', options: ['Sit', 'Stand', 'Walk', 'Lie down'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Nuwé', phonetic: 'noo-WAY', meaning: 'Swim', options: ['Fish', 'Float', 'Swim', 'Dive'], correct: 2 },
+          { type: 'multiple-choice', prompt: 'At Sundance, the singers begin. Someone calls out "Lowáŋ po!" What are they saying?', options: ['Dance, everyone!', 'Sing, everyone!', 'Pray, everyone!', 'Stand up, everyone!'], correct: 1, explanation: '"Lowáŋ po!" — Sing, everyone! The "-po" ending makes it a command for a group.' },
+          { type: 'match', prompt: 'Match the actions:', pairs: [ { lakota: 'Máni', english: 'Walk' }, { lakota: 'Íŋyaŋka', english: 'Run' }, { lakota: 'Lowáŋ', english: 'Sing' }, { lakota: 'Wačhí', english: 'Dance' } ] },
+        ]
+      },
+      {
+        id: 'L9-05',
+        title: 'Describing the World',
+        subtitle: 'Tȟáŋka, Čísčila, Wašáke, Kȟatá',
+        exercises: [
+          { type: 'cultural-note', title: 'Words That Describe', text: 'Descriptive words — what English calls adjectives — work differently in Lakota. They often act like verbs and usually follow the noun. "Šúŋka tȟáŋka" means "big dog." "Mní sní" means "cold water."\n\nYou already know "wašté" (good) and "lílá" (very). Now you\'ll expand your ability to describe what you see, feel, and experience — hot days, cold nights, big gatherings, and strong hearts.' },
+          { type: 'listen-identify', prompt: 'Tȟáŋka', phonetic: 'TAHN-kah', meaning: 'Big / Large', options: ['Small', 'Big', 'Tall', 'Strong'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Čísčila', phonetic: 'CHEESH-chee-lah', meaning: 'Small / Little', options: ['Big', 'Small', 'Short', 'Thin'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Wašáke', phonetic: 'wah-SHAH-kay', meaning: 'Strong', options: ['Weak', 'Fast', 'Strong', 'Brave'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Kȟatá', phonetic: 'kah-TAH', meaning: 'Hot', options: ['Cold', 'Hot', 'Warm', 'Dry'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Sní', phonetic: 'SHNEE', meaning: 'Cold', options: ['Hot', 'Wet', 'Cold', 'Dry'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Háŋske', phonetic: 'HAHN-skay', meaning: 'Tall / Long', options: ['Short', 'Tall / Long', 'Wide', 'Heavy'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Ptéčela', phonetic: 'PTAY-chay-lah', meaning: 'Short', options: ['Tall', 'Wide', 'Short', 'Thin'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Šíča', phonetic: 'SHEE-chah', meaning: 'Bad', options: ['Good', 'Bad', 'Ugly', 'Wrong'], correct: 1 },
+          { type: 'multiple-choice', prompt: 'To say "big buffalo" in Lakota, the word order is:', options: ['Tȟáŋka Tȟatȟáŋka', 'Tȟatȟáŋka Tȟáŋka', 'Lílá Tȟatȟáŋka', 'Tȟáŋka Lílá'], correct: 1, explanation: 'Tȟatȟáŋka Tȟáŋka — the descriptive word follows the noun in Lakota.' },
+          { type: 'match', prompt: 'Match the descriptions:', pairs: [ { lakota: 'Tȟáŋka', english: 'Big' }, { lakota: 'Čísčila', english: 'Small' }, { lakota: 'Kȟatá', english: 'Hot' }, { lakota: 'Sní', english: 'Cold' } ] },
+        ]
+      },
+      {
+        id: 'L9-06',
+        title: 'The Living World',
+        subtitle: 'Rain, rivers, flowers, and home',
+        exercises: [
+          { type: 'cultural-note', title: 'The World Around You', text: 'You\'ve learned the earth, sky, and elements. Now let\'s go deeper into the living world — the rain that feeds the land, the rivers that carry life, the flowers that bloom on the prairie, and the home that shelters your family.\n\nThese words connect you to daily life on the reservation and at camp. When the rain comes at Sundance, you\'ll know to say "Magážu" — it\'s raining. When you see wildflowers on the prairie, you\'ll know they are "waȟčá."' },
+          { type: 'listen-identify', prompt: 'Magážu', phonetic: 'mah-GAH-zhoo', meaning: 'Rain / It\'s raining', options: ['Snow', 'Rain', 'Wind', 'Storm'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Wá', phonetic: 'WAH', meaning: 'Snow', options: ['Rain', 'Ice', 'Snow', 'Hail'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Čhagá', phonetic: 'chah-GAH', meaning: 'Ice', options: ['Snow', 'Water', 'Ice', 'Frost'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Wakpá', phonetic: 'wahk-PAH', meaning: 'River', options: ['Lake', 'River', 'Creek', 'Ocean'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Blé', phonetic: 'BLAY', meaning: 'Lake', options: ['River', 'Pond', 'Lake', 'Sea'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Waȟčá', phonetic: 'wah-HCHAH', meaning: 'Flower', options: ['Tree', 'Grass', 'Flower', 'Berry'], correct: 2 },
+          { type: 'listen-identify', prompt: 'Phéži', phonetic: 'PAY-zhee', meaning: 'Grass', options: ['Flower', 'Grass', 'Leaf', 'Weed'], correct: 1 },
+          { type: 'listen-identify', prompt: 'Thípi', phonetic: 'TEE-pee', meaning: 'House / Lodge / Dwelling', options: ['Camp', 'House', 'Door', 'Blanket'], correct: 1 },
+          { type: 'multiple-choice', prompt: 'A rainstorm rolls in at camp. You hear someone say "Magážu!" This means:', options: ['It\'s snowing!', 'It\'s windy!', 'It\'s raining!', 'There\'s thunder!'], correct: 2, explanation: 'Magážu — It\'s raining! Now you know what to say when the clouds open up.' },
+          { type: 'match', prompt: 'Match the living world:', pairs: [ { lakota: 'Magážu', english: 'Rain' }, { lakota: 'Wakpá', english: 'River' }, { lakota: 'Waȟčá', english: 'Flower' }, { lakota: 'Thípi', english: 'House / Lodge' } ] },
+          { type: 'cultural-note', title: 'Beyond the Circle', text: 'You\'ve now walked beyond the Sundance circle and into the wider world of Lakȟótiyapi. You know words for the body, colors, animals, actions, descriptions, and the living world around you.\n\nEvery word you\'ve learned is a bridge — between you and the language, between you and the land, between you and the people who have spoken these words for generations.\n\nKeep practicing. Keep listening. Keep your heart open.\n\nMitákuye Oyásʼiŋ.' },
+        ]
+      }
+    ]
   }
 ];
 
