@@ -16,12 +16,35 @@ const LessonEngine = {
   start(moduleId, lessonId, exercises) {
     this.moduleId = moduleId;
     this.lessonId = lessonId;
-    this.exercises = exercises;
+    this.exercises = this._insertWordIntros(exercises);
     this.currentIndex = 0;
     this.score = 0;
-    this.totalQuestions = exercises.filter(e => e.type !== 'cultural-note').length;
+    this.totalQuestions = this.exercises.filter(e => e.type !== 'cultural-note' && e.type !== 'word-intro').length;
     this.matchState = null;
     this.renderCurrent();
+  },
+
+  // Insert word-intro cards before the first listen-identify for each unique word
+  _insertWordIntros(exercises) {
+    const result = [];
+    const introduced = new Set();
+    for (const ex of exercises) {
+      if (ex.type === 'listen-identify' && ex.meaning) {
+        const key = ex.prompt.toLowerCase().trim();
+        if (!introduced.has(key)) {
+          introduced.add(key);
+          result.push({
+            type: 'word-intro',
+            word: ex.prompt,
+            phonetic: ex.phonetic,
+            meaning: ex.meaning,
+            association: ex.association || null,
+          });
+        }
+      }
+      result.push(ex);
+    }
+    return result;
   },
 
   // Get progress fraction
@@ -51,6 +74,11 @@ const LessonEngine = {
         container.innerHTML = this.renderCulturalNote(ex);
         this._bindContinue();
         break;
+      case 'word-intro':
+        container.innerHTML = this.renderWordIntro(ex);
+        this._bindWordIntroAudio(ex);
+        this._bindContinue();
+        break;
       case 'multiple-choice':
         container.innerHTML = this.renderMultipleChoice(ex);
         this.bindMultipleChoice(ex);
@@ -70,6 +98,50 @@ const LessonEngine = {
       default:
         container.innerHTML = `<p>Unknown exercise type: ${ex.type}</p>`;
     }
+  },
+
+  // --- WORD INTRO ---
+  renderWordIntro(ex) {
+    const associationHtml = ex.association
+      ? `<div class="word-intro-association">${ex.association}</div>`
+      : '';
+
+    return `
+      <div class="exercise" key="${this.currentIndex}">
+        <div class="word-intro-card">
+          <div class="word-intro-label">New Word</div>
+          <div class="word-intro-lakota t-display">${ex.word}</div>
+          <div class="word-intro-phonetic">${ex.phonetic}</div>
+          <button class="audio-btn word-intro-audio" id="word-intro-play">
+            <span class="speaker">🔊</span> Listen
+          </button>
+          <div class="word-intro-divider"></div>
+          <div class="word-intro-meaning">${ex.meaning}</div>
+          ${associationHtml}
+        </div>
+        <button class="btn btn-primary btn-lg" id="continue-btn">Got It</button>
+      </div>
+    `;
+  },
+
+  _bindWordIntroAudio(ex) {
+    setTimeout(() => {
+      const btn = document.getElementById('word-intro-play');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        if (LakotaAudio.speaking) return;
+        btn.classList.add('playing');
+        btn.innerHTML = '<span class="speaker">🔊</span> Speaking...';
+        LakotaAudio.speak(
+          ex.word,
+          null,
+          () => {
+            btn.classList.remove('playing');
+            btn.innerHTML = '<span class="speaker">🔊</span> Listen Again';
+          }
+        );
+      });
+    }, 50);
   },
 
   // --- CULTURAL NOTE ---

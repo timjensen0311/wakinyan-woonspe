@@ -1245,6 +1245,85 @@ body {
   font-size: 16px;
 }
 
+/* Word intro card */
+.word-intro-card {
+  text-align: center;
+  padding: 32px 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(168, 200, 240, 0.06), rgba(168, 200, 240, 0.02));
+  border: 1px solid rgba(168, 200, 240, 0.12);
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.word-intro-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  width: 120px; height: 120px;
+  transform: translateX(-50%) translateY(-50%);
+  background: radial-gradient(circle, rgba(168, 200, 240, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.word-intro-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--lightning);
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+.word-intro-lakota {
+  font-size: 42px;
+  color: var(--lightning-bright);
+  text-shadow: 0 0 30px rgba(168, 200, 240, 0.2);
+  margin-bottom: 8px;
+  position: relative;
+}
+.word-intro-phonetic {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+  position: relative;
+}
+.word-intro-audio {
+  margin: 0 auto 20px;
+  display: inline-flex;
+  position: relative;
+}
+.word-intro-divider {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--lightning), transparent);
+  margin: 0 auto 20px;
+  opacity: 0.3;
+}
+.word-intro-meaning {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--sage-light);
+  margin-bottom: 12px;
+  position: relative;
+}
+.word-intro-association {
+  font-size: 14px;
+  color: var(--warm-glow);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.55;
+  max-width: 320px;
+  margin: 0 auto;
+  position: relative;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(232, 219, 184, 0.04);
+  border: 1px solid rgba(232, 219, 184, 0.08);
+}
+
 /* Cultural note */
 .cultural-note {
   padding: 24px;
@@ -1452,6 +1531,8 @@ body {
   .exercise-prompt { font-size: 22px; }
   .countdown-number { font-size: 44px; }
   .thunderbird-hero .thunderbird-img { width: 100px !important; height: auto !important; }
+  .word-intro-lakota { font-size: 32px; }
+  .word-intro-meaning { font-size: 20px; }
 }
 
 /* Standard mobile (380px - 480px) — this is the default/primary target */
@@ -1464,6 +1545,8 @@ body {
   .exercise-prompt { font-size: 28px; }
   .option-btn { padding: 20px 22px; font-size: 17px; }
   .cultural-note-text { font-size: 17px; }
+  .word-intro-lakota { font-size: 46px; }
+  .word-intro-meaning { font-size: 26px; }
 }
 
 /* Tablet and up (768px+) */
